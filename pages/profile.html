@@ -1,0 +1,104 @@
+<div class="profile-content">
+    <div class="page-header">
+        <i class="fas fa-user-circle header-icon"></i>
+        <div class="header-text">
+            <h1>Profile Settings</h1>
+            <p>Manage your simracing profile and preferences</p>
+        </div>
+    </div>
+
+    <form id="profile-form" class="profile-form">
+        <div class="form-sections">
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-id-card"></i>
+                    <h3>Personal Information</h3>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">
+                            <i class="fas fa-user"></i> First Name
+                        </label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Your first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">
+                            <i class="fas fa-user"></i> Last Name
+                        </label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Your last name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-at"></i> Username
+                    </label>
+                    <input type="text" id="username" name="username" placeholder="Your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">
+                        <i class="fas fa-birthday-cake"></i> Age
+                    </label>
+                    <input type="number" id="age" name="age" min="13" max="100">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Social Media</h3>
+                </div>
+                <div class="form-group social-input">
+                    <i class="fab fa-discord"></i>
+                    <input type="text" id="discord" name="discord" placeholder="username#0000">
+                </div>
+                <div class="form-group social-input">
+                    <i class="fab fa-instagram"></i>
+                    <input type="text" id="instagram" name="instagram" placeholder="@yourusername">
+                </div>
+                <div class="form-group social-input">
+                    <i class="fab fa-steam"></i>
+                    <input type="text" id="steam-id" name="steamId" placeholder="Your Steam ID">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Sim Racing Profile</h3>
+                </div>
+                <div class="form-group">
+                    <label for="experience-level">Experience Level</label>
+                    <select id="experience-level" name="experienceLevel" class="styled-select">
+                        <option value="beginner">🔰 Beginner</option>
+                        <option value="intermediate">🏁 Intermediate</option>
+                        <option value="advanced">🏆 Advanced</option>
+                        <option value="professional">👑 Professional</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="real-vehicles">
+                        <i class="fas fa-car"></i> Real Vehicles
+                    </label>
+                    <textarea id="real-vehicles" name="realVehicles" placeholder="List your real cars/motorcycles"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>About You</h3>
+                </div>
+                <div class="form-group">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" name="bio" placeholder="Tell us about yourself..." rows="4" class="bio-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="save-profile-btn">
+                <i class="fas fa-save"></i> Save Changes
+            </button>
+        </div>
+    </form>
+</div>

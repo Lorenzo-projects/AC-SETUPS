@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Setup Share</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        // Check if config exists, otherwise use template
+        const configScript = document.createElement('script');
+        try {
+            const configPath = 'js/config.js';
+            fetch(configPath)
+                .then(response => {
+                    configScript.src = configPath;
+                })
+                .catch(() => {
+                    console.warn('Config not found, using template');
+                    configScript.src = 'js/config.template.js';
+                });
+            document.head.appendChild(configScript);
+        } catch (error) {
+            console.error('Error loading config:', error);
+        }
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="js/utils.js"></script>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="description" content="Free Assetto Corsa setup sharing platform">
+    <meta name="keywords" content="Assetto Corsa, Racing Simulator, Setup Share">
+    <meta name="theme-color" content="#1e3799">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Overlay pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, rgba(225, 6, 0, 0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(225, 6, 0, 0.05) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(225, 6, 0, 0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(225, 6, 0, 0.05) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="logo">AC Setup Share</div>
+        <div class="nav-links">
+            <a href="#" data-page="home">Home</a>
+            <a href="#" data-page="search">Search Setups</a>
+            <a href="#" data-page="upload">Upload Setup</a>
+            <a href="#" data-page="profile" id="profile-link" style="display: none;">Profile</a>
+            <button id="login-btn">Login</button>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+            </select>
+        </div>
+    </nav>
+
+    <main id="content">
+        <!-- Content will be loaded here dynamically -->
+    </main>
+
+    <!-- Rimuovere il base tag -->
+    <!-- <base href="/"> -->
+    
+    <!-- Rimuovere base tag e script duplicato -->
+    <script src="js/i18n.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
