@@ -1,0 +1,22 @@
+# Config files with sensitive data
+js/config.js
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Cache
+.cache/
