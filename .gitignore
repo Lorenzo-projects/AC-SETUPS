@@ -9,7 +9,7 @@ js/config.js
 .idea/
 
 # Logs
-*.log
+.log
 
 # Dependencies
 node_modules/
